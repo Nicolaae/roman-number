@@ -1,0 +1,44 @@
+name: Build Automation
+
+# La pipeline viene eseguita ad ogni push e Pull Request sui rami principali
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del codice
+      uses: actions/checkout@v4
+
+    - name: Setup Java JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: maven
+
+    # Step: Analisi statica del codice
+    - name: Controllo Qualità (Checkstyle)
+      run: mvn checkstyle:check
+      
+    # Step 1: Compilazione (fase di compile)
+    - name: Compilazione del progetto
+      run: mvn compile
+
+    # Step 2: Esecuzione dei test (fase di test)
+    - name: Esecuzione dei Test di Unità
+      run: mvn test
+
+    # Step 3: Invio report di coverage a Coveralls
+    - name: Invia report a Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
