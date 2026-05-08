@@ -10,4 +10,9 @@ import org.junit.Test;
 
 public class IntegerToRomanTest {
 
+    @Test
+    public void testConvert() {
+        // Test fittizio per non far arrabbiare JUnit (No runnable methods)
+        assertEquals("", IntegerToRoman.convert(0));
+    }
 }

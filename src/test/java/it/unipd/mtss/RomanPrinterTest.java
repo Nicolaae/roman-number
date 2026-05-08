@@ -10,5 +10,9 @@ import org.junit.Test;
 
 public class RomanPrinterTest {
 
+    @Test
+    public void testPrint() {
+        // Test fittizio per non far arrabbiare JUnit e per evitare errori di sintassi
+        assertEquals("", RomanPrinter.print(0));
     }
 }
