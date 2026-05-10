@@ -38,6 +38,13 @@ public class RomanPrinter {
                 result[3] += "   \\ \\/ /   ";
                 result[4] += "    \\  /    ";
                 result[5] += "     \\/     ";
+            } else if (c == 'X') {
+                result[0] += " __   __ ";
+                result[1] += " \\ \\ / / ";
+                result[2] += "  \\ V /  ";
+                result[3] += "   > <   ";
+                result[4] += "  / . \\  ";
+                result[5] += " /_/ \\_\\ ";
             }
         }
         

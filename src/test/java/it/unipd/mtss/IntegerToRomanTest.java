@@ -24,7 +24,7 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvert_Four_ReturnsIII() {
+    public void testConvert_Four_ReturnsIV() {
         // Arrange
         int input = 4;
         
@@ -36,15 +36,27 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvert_Six_ReturnsIII() {
+    public void testConvert_Nine_ReturnsIX() {
         // Arrange
-        int input = 6;
+        int input = 9;
         
         // Act
         String actual = IntegerToRoman.convert(input);
         
         // Assert
-        assertEquals("VI", actual);
+        assertEquals("IX", actual);
+    }
+
+    @Test
+    public void testConvert_Ten_ReturnsX() {
+        // Arrange
+        int input = 10;
+        
+        // Act
+        String actual = IntegerToRoman.convert(input);
+        
+        // Assert
+        assertEquals("X", actual);
     }
 
     @Test
@@ -62,7 +74,7 @@ public class IntegerToRomanTest {
     @Test
     public void testConvert_OutOfBounds_ReturnsNull() {
         // Arrange
-        int input = 7;
+        int input = 11;
         
         // Act
         String actual = IntegerToRoman.convert(input);
