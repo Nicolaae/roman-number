@@ -12,42 +12,23 @@ public class IntegerToRoman {
     }
 
     public static String convert(int number) {
-        if (number < 1 || number > 50) {
+        if (number < 1 || number > 100) {
             return null; 
         }
+
+        // Struttura dati: mappa i valori in ordine decrescente
+        int[] values = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] symbols = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
         StringBuilder roman = new StringBuilder();
         int temp = number;
 
-        if (temp == 50) {
-            roman.append("L");
-            temp -= 50;
-        } else if (temp >= 40) {
-            roman.append("XL");
-            temp -= 40;
-        }
-
-        while (temp >= 10) {
-            roman.append("X");
-            temp -= 10;
-        }
-        
-        if (temp == 9) {
-            roman.append("IX");
-            temp -= 9;
-        }
-
-        if (temp >= 5) {
-            roman.append("V");
-            temp -= 5;
-        } else if (temp == 4) {
-            roman.append("IV");
-            temp -= 4;
-        }
-
-        while (temp >= 1) {
-            roman.append("I");
-            temp--;
+        // Logica semplificata: scorre l'array senza bisogno di 1000 "if"
+        for (int i = 0; i < values.length; i++) {
+            while (temp >= values[i]) {
+                roman.append(symbols[i]);
+                temp -= values[i];
+            }
         }
         
         return roman.toString();

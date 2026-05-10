@@ -67,12 +67,27 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testConvert_Ninety_ReturnsXC() {
+        assertEquals("XC", IntegerToRoman.convert(90));
+    }
+
+    @Test
+    public void testConvert_NinetyNine_ReturnsXCIX() {
+        assertEquals("XCIX", IntegerToRoman.convert(99));
+    }
+
+    @Test
+    public void testConvert_OneHundred_ReturnsC() {
+        assertEquals("C", IntegerToRoman.convert(100));
+    }
+
+    @Test
     public void testConvert_Zero_ReturnsNull() {
         assertNull(IntegerToRoman.convert(0));
     }
 
     @Test
     public void testConvert_OutOfBounds_ReturnsNull() {
-        assertNull(IntegerToRoman.convert(51));
+        assertNull(IntegerToRoman.convert(101));
     }
 }
