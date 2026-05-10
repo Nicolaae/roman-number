@@ -12,8 +12,6 @@ public class RomanPrinterTest {
 
     @Test
     public void testPrint_One_ReturnsAsciiI() {
-        // Arrange
-        int input = 1;
         String expected = 
             "  _____  \n" +
             " |_   _| \n" +
@@ -22,17 +20,11 @@ public class RomanPrinterTest {
             "  _| |_  \n" +
             " |_____| \n";
         
-        // Act
-        String actual = RomanPrinter.print(input);
-        
-        // Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, RomanPrinter.print(1));
     }
 
     @Test
     public void testPrint_Four_ReturnsAsciiIV() {
-        // Arrange
-        int input = 4;
         String expected = 
             "  _____   __      __ \n" +
             " |_   _|  \\ \\    / / \n" +
@@ -41,17 +33,11 @@ public class RomanPrinterTest {
             "  _| |_      \\  /    \n" +
             " |_____|      \\/     \n";
         
-        // Act
-        String actual = RomanPrinter.print(input);
-        
-        // Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, RomanPrinter.print(4));
     }
 
     @Test
     public void testPrint_Nine_ReturnsAsciiIX() {
-        // Arrange
-        int input = 9;
         String expected = 
             "  _____   __   __ \n" +
             " |_   _|  \\ \\ / / \n" +
@@ -60,29 +46,45 @@ public class RomanPrinterTest {
             "  _| |_    / . \\  \n" +
             " |_____|  /_/ \\_\\ \n";
         
-        // Act
-        String actual = RomanPrinter.print(input);
-        
-        // Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, RomanPrinter.print(9));
     }
 
     @Test
-    public void testPrint_Ten_ReturnsAsciiX() {
-        // Arrange
-        int input = 10;
+    public void testPrint_Fourteen_ReturnsAsciiXIV() {
         String expected = 
-            " __   __ \n" +
-            " \\ \\ / / \n" +
-            "  \\ V /  \n" +
-            "   > <   \n" +
-            "  / . \\  \n" +
-            " /_/ \\_\\ \n" ;
+            " __   __   _____   __      __ \n" +
+            " \\ \\ / /  |_   _|  \\ \\    / / \n" +
+            "  \\ V /     | |     \\ \\  / /  \n" +
+            "   > <      | |      \\ \\/ /   \n" +
+            "  / . \\    _| |_      \\  /    \n" +
+            " /_/ \\_\\  |_____|      \\/     \n";
         
-        // Act
-        String actual = RomanPrinter.print(input);
+        assertEquals(expected, RomanPrinter.print(14));
+    }
+
+    @Test
+    public void testPrint_Nineteen_ReturnsAsciiXIX() {
+        String expected = 
+            " __   __   _____   __   __ \n" +
+            " \\ \\ / /  |_   _|  \\ \\ / / \n" +
+            "  \\ V /     | |     \\ V /  \n" +
+            "   > <      | |      > <   \n" +
+            "  / . \\    _| |_    / . \\  \n" +
+            " /_/ \\_\\  |_____|  /_/ \\_\\ \n";
         
-        // Assert
-        assertEquals(expected, actual);
+        assertEquals(expected, RomanPrinter.print(19));
+    }
+
+    @Test
+    public void testPrint_Twenty_ReturnsAsciiXX() {
+        String expected = 
+            " __   __  __   __ \n" +
+            " \\ \\ / /  \\ \\ / / \n" +
+            "  \\ V /    \\ V /  \n" +
+            "   > <      > <   \n" +
+            "  / . \\    / . \\  \n" +
+            " /_/ \\_\\  /_/ \\_\\ \n";
+        
+        assertEquals(expected, RomanPrinter.print(20));
     }
 }

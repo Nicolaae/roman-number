@@ -12,17 +12,20 @@ public class IntegerToRoman {
     }
 
     public static String convert(int number) {
-        if (number < 1 || number > 10) {
+        if (number < 1 || number > 20) {
             return null; 
         }
 
         StringBuilder roman = new StringBuilder();
         int temp = number;
 
-        if (temp == 10) {
+        // Trasformato in while per gestire il 20 (XX)
+        while (temp >= 10) {
             roman.append("X");
             temp -= 10;
-        } else if (temp == 9) {
+        }
+        
+        if (temp == 9) {
             roman.append("IX");
             temp -= 9;
         }

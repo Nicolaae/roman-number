@@ -13,73 +13,46 @@ public class IntegerToRomanTest {
 
     @Test
     public void testConvert_One_ReturnsI() {
-        // Arrange
-        int input = 1;
-        
-        // Act
-        String actual = IntegerToRoman.convert(input);
-        
-        // Assert
-        assertEquals("I", actual);
+        assertEquals("I", IntegerToRoman.convert(1));
     }
 
     @Test
     public void testConvert_Four_ReturnsIV() {
-        // Arrange
-        int input = 4;
-        
-        // Act
-        String actual = IntegerToRoman.convert(input);
-        
-        // Assert
-        assertEquals("IV", actual);
+        assertEquals("IV", IntegerToRoman.convert(4));
     }
 
     @Test
     public void testConvert_Nine_ReturnsIX() {
-        // Arrange
-        int input = 9;
-        
-        // Act
-        String actual = IntegerToRoman.convert(input);
-        
-        // Assert
-        assertEquals("IX", actual);
+        assertEquals("IX", IntegerToRoman.convert(9));
     }
 
     @Test
     public void testConvert_Ten_ReturnsX() {
-        // Arrange
-        int input = 10;
-        
-        // Act
-        String actual = IntegerToRoman.convert(input);
-        
-        // Assert
-        assertEquals("X", actual);
+        assertEquals("X", IntegerToRoman.convert(10));
+    }
+
+    @Test
+    public void testConvert_Fourteen_ReturnsXIV() {
+        assertEquals("XIV", IntegerToRoman.convert(14));
+    }
+
+    @Test
+    public void testConvert_Nineteen_ReturnsXIX() {
+        assertEquals("XIX", IntegerToRoman.convert(19));
+    }
+
+    @Test
+    public void testConvert_Twenty_ReturnsXX() {
+        assertEquals("XX", IntegerToRoman.convert(20));
     }
 
     @Test
     public void testConvert_Zero_ReturnsNull() {
-        // Arrange
-        int input = 0;
-        
-        // Act
-        String actual = IntegerToRoman.convert(input);
-        
-        // Assert
-        assertNull(actual);
+        assertNull(IntegerToRoman.convert(0));
     }
 
     @Test
     public void testConvert_OutOfBounds_ReturnsNull() {
-        // Arrange
-        int input = 11;
-        
-        // Act
-        String actual = IntegerToRoman.convert(input);
-        
-        // Assert
-        assertNull(actual);
+        assertNull(IntegerToRoman.convert(21));
     }
 }
