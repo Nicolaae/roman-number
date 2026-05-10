@@ -7,13 +7,21 @@ package it.unipd.mtss;
 
 public class IntegerToRoman {
 
-    // Costruttore privato per nascondere quello pubblico di default (Regola Checkstyle)
     private IntegerToRoman() {
         throw new IllegalStateException("Utility class");
     }
 
     public static String convert(int number) {
-        // Ritorno fittizio temporaneo per permettere la compilazione
-        return "";
+        if (number < 1 || number > 3) {
+            return null; 
+        }
+        
+        StringBuilder roman = new StringBuilder();
+        int temp = number;
+        while (temp >= 1) {
+            roman.append("I");
+            temp--;
+        }
+        return roman.toString();
     }
 }

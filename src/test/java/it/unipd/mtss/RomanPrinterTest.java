@@ -11,8 +11,40 @@ import org.junit.Test;
 public class RomanPrinterTest {
 
     @Test
-    public void testPrint() {
-        // Test fittizio per non far arrabbiare JUnit e per evitare errori di sintassi
-        assertEquals("", RomanPrinter.print(0));
+    public void testPrint_One_ReturnsAsciiI() {
+        // Arrange
+        int input = 1;
+        String expected = 
+            "  _____  \n" +
+            " |_   _| \n" +
+            "   | |   \n" +
+            "   | |   \n" +
+            "  _| |_  \n" +
+            " |_____| \n";
+        
+        // Act
+        String actual = RomanPrinter.print(input);
+        
+        // Assert
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrint_Three_ReturnsAsciiIII() {
+        // Arrange
+        int input = 3;
+        String expected = 
+            "  _____    _____    _____  \n" +
+            " |_   _|  |_   _|  |_   _| \n" +
+            "   | |      | |      | |   \n" +
+            "   | |      | |      | |   \n" +
+            "  _| |_    _| |_    _| |_  \n" +
+            " |_____|  |_____|  |_____| \n";
+        
+        // Act
+        String actual = RomanPrinter.print(input);
+        
+        // Assert
+        assertEquals(expected, actual);
     }
 }
