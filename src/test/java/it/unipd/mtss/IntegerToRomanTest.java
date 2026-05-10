@@ -47,12 +47,32 @@ public class IntegerToRomanTest {
     }
 
     @Test
+    public void testConvert_ThirtyNine_ReturnsXXXIX() {
+        assertEquals("XXXIX", IntegerToRoman.convert(39));
+    }
+
+    @Test
+    public void testConvert_Forty_ReturnsXL() {
+        assertEquals("XL", IntegerToRoman.convert(40));
+    }
+
+    @Test
+    public void testConvert_FortyNine_ReturnsXLIX() {
+        assertEquals("XLIX", IntegerToRoman.convert(49));
+    }
+
+    @Test
+    public void testConvert_Fifty_ReturnsL() {
+        assertEquals("L", IntegerToRoman.convert(50));
+    }
+
+    @Test
     public void testConvert_Zero_ReturnsNull() {
         assertNull(IntegerToRoman.convert(0));
     }
 
     @Test
     public void testConvert_OutOfBounds_ReturnsNull() {
-        assertNull(IntegerToRoman.convert(21));
+        assertNull(IntegerToRoman.convert(51));
     }
 }
