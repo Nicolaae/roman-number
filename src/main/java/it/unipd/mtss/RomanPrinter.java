@@ -59,6 +59,13 @@ public class RomanPrinter {
                 result[3] += " | |      ";
                 result[4] += " | |____  ";
                 result[5] += "  \\_____| ";
+            } else if (c == 'D') {
+                result[0] += "  _____   ";
+                result[1] += " |  __ \\  ";
+                result[2] += " | |  | | ";
+                result[3] += " | |  | | ";
+                result[4] += " | |__| | ";
+                result[5] += " |_____/  ";
             }
         }
         

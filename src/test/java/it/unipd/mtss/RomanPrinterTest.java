@@ -165,4 +165,43 @@ public class RomanPrinterTest {
         
         assertEquals(expected, RomanPrinter.print(100));
     }
+
+    @Test
+    public void testPrint_FourHundred_ReturnsAsciiCD() {
+        String expected = 
+            "   _____    _____   \n" +
+            "  / ____|  |  __ \\  \n" +
+            " | |       | |  | | \n" +
+            " | |       | |  | | \n" +
+            " | |____   | |__| | \n" +
+            "  \\_____|  |_____/  \n";
+        
+        assertEquals(expected, RomanPrinter.print(400));
+    }
+
+    @Test
+    public void testPrint_FourHundredNinetyNine_ReturnsAsciiCDXCIX() {
+        String expected = 
+            "   _____    _____    __   __    _____    _____   __   __ \n" +
+            "  / ____|  |  __ \\   \\ \\ / /   / ____|  |_   _|  \\ \\ / / \n" +
+            " | |       | |  | |   \\ V /   | |         | |     \\ V /  \n" +
+            " | |       | |  | |    > <    | |         | |      > <   \n" +
+            " | |____   | |__| |   / . \\   | |____    _| |_    / . \\  \n" +
+            "  \\_____|  |_____/   /_/ \\_\\   \\_____|  |_____|  /_/ \\_\\ \n";
+        
+        assertEquals(expected, RomanPrinter.print(499));
+    }
+
+    @Test
+    public void testPrint_FiveHundred_ReturnsAsciiD() {
+        String expected = 
+            "  _____   \n" +
+            " |  __ \\  \n" +
+            " | |  | | \n" +
+            " | |  | | \n" +
+            " | |__| | \n" +
+            " |_____/  \n";
+        
+        assertEquals(expected, RomanPrinter.print(500));
+    }
 }
