@@ -3,9 +3,9 @@ name: Build Automation
 # La pipeline viene eseguita ad ogni push e Pull Request sui rami principali
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "develop" ]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main", "develop" ]
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true

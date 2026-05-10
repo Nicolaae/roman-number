@@ -24,21 +24,45 @@ public class IntegerToRomanTest {
     }
 
     @Test
-    public void testConvert_Three_ReturnsIII() {
+    public void testConvert_Four_ReturnsIII() {
         // Arrange
-        int input = 3;
+        int input = 4;
         
         // Act
         String actual = IntegerToRoman.convert(input);
         
         // Assert
-        assertEquals("III", actual);
+        assertEquals("IV", actual);
+    }
+
+    @Test
+    public void testConvert_Six_ReturnsIII() {
+        // Arrange
+        int input = 6;
+        
+        // Act
+        String actual = IntegerToRoman.convert(input);
+        
+        // Assert
+        assertEquals("VI", actual);
+    }
+
+    @Test
+    public void testConvert_Zero_ReturnsNull() {
+        // Arrange
+        int input = 0;
+        
+        // Act
+        String actual = IntegerToRoman.convert(input);
+        
+        // Assert
+        assertNull(actual);
     }
 
     @Test
     public void testConvert_OutOfBounds_ReturnsNull() {
         // Arrange
-        int input = 4;
+        int input = 7;
         
         // Act
         String actual = IntegerToRoman.convert(input);

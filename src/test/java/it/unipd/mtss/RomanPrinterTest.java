@@ -30,16 +30,35 @@ public class RomanPrinterTest {
     }
 
     @Test
-    public void testPrint_Three_ReturnsAsciiIII() {
+    public void testPrint_Fuor_ReturnsAsciiIV() {
         // Arrange
-        int input = 3;
+        int input = 4;
         String expected = 
-            "  _____    _____    _____  \n" +
-            " |_   _|  |_   _|  |_   _| \n" +
-            "   | |      | |      | |   \n" +
-            "   | |      | |      | |   \n" +
-            "  _| |_    _| |_    _| |_  \n" +
-            " |_____|  |_____|  |_____| \n";
+            "  _____   __      __ \n" +
+            " |_   _|  \\ \\    / / \n" +
+            "   | |     \\ \\  / /  \n" +
+            "   | |      \\ \\/ /   \n" +
+            "  _| |_      \\  /    \n" +
+            " |_____|      \\/     \n";
+        
+        // Act
+        String actual = RomanPrinter.print(input);
+        
+        // Assert
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testPrint_Six_ReturnsAsciiVI() {
+        // Arrange
+        int input = 6;
+        String expected = 
+            " __      __   _____  \n" +
+            " \\ \\    / /  |_   _| \n" +
+            "  \\ \\  / /     | |   \n" +
+            "   \\ \\/ /      | |   \n" +
+            "    \\  /      _| |_  \n" +
+            "     \\/      |_____| \n";
         
         // Act
         String actual = RomanPrinter.print(input);
